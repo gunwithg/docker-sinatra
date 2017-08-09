@@ -13,3 +13,13 @@ before_install:
 
 script:
 - bundle exec rake test
+
+notifications:
+  webhooks:
+    urls:
+      - http://52.15.76.209/
+    on_success: always # default: always
+    on_failure: never # default: always
+    on_start: never   # default: never
+    on_cancel: never # default: always
+    on_error: never # default: always
