@@ -13,7 +13,8 @@ ls -alih
 cat .git/config
 
 touch projectname.hcl
-echo "${TRAVIS_BUILD_NUMBER}" > projectname.hcl
+echo "${TRAVIS_BUILD_NUMBER} jonas" > projectname.hcl
+
 
 #NOMAD_JOB=$(basename `pwd`)
 #DOCKER_REPO=$1
