@@ -4,8 +4,8 @@ EMAILADDRESS=git log --format='%ae' ${TRAVIS_COMMIT}
 BRANCH=
 
 cd $HOME
-git config --global user.name "${USERNAME}"
-git config --global user.email "${EMAILADDRESS}"
+git config user.name "${USERNAME}"
+git config user.email "${EMAILADDRESS}"
 git clone --branch=master  https://gunwithg:$GITHUB_API_KEY@github.com/gunwithg/docker-sinatra  master > /dev/null
 
 cd master  
