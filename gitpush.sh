@@ -10,8 +10,12 @@ cat .git/config
 #touch projectname.hcl
 #echo "${TRAVIS_BUILD_NUMBER}" > projectname.hcl
 
+NOMAD_JOB=$(basename `pwd`)
+DOCKER_REPO=$1
+DOCKER_TAG=$2
+
 cat > projectname.hcl << NOMADCONFIG
-job "${DOCKER_REPO}" {
+job "${NOMAD_JOB}" {
   region      = "aws"
   datacenters = ["eu-west-1"]
   type = "service"
@@ -85,3 +89,5 @@ echo ${TRAVIS_COMMIT_MESSAGE}
 echo ${TRAVIS_COMMIT_RANGE}
 echo ${TRAVIS_EVENT_TYPE}
 echo ${TRAVIS_JOB_ID}
+echo ${TRAVIS_PULL_REQUEST}
+echo ${TRAVIS_PULL_REQUEST_BRANCH}
