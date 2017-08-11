@@ -13,5 +13,5 @@ touch projectname.hcl
 echo "${TRAVIS_BUILD_NUMBER}" > projectname.hcl
 git add -f .
 git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed [skip ci] "
-git push -fq origin master:deploy > /dev/null
+git push -fq origin master:deploy 
 echo -e "Done\n"
