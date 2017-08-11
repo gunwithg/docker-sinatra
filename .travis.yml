@@ -14,10 +14,14 @@ before_install:
 script:
 - bundle exec rake test
 
+after_success:
+- chmod +x ./gitpush.sh
+- ./gitpush.sh
+
 notifications:
   webhooks:
     urls:
-      - http://52.15.76.209/
+      - http://ichya.com
     on_success: always # default: always
     on_failure: never # default: always
     on_start: never   # default: never
