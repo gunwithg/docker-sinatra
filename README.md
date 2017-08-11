@@ -6,4 +6,3 @@ The build also runs another container using the same Docker image and runs the s
 
 It was cloned from [tcnksm](https://github.com/tcnksm-sample/docker-sinatra) and modified (with thanks).
 
-Test
