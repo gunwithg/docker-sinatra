@@ -1,6 +1,11 @@
+
+USERNAME=git log --format='%an' ${TRAVIS_COMMIT} 
+EMAILADDRESS=git log --format='%ae' ${TRAVIS_COMMIT}
+BRANCH=
+
 cd $HOME
-git config --global user.name "Iam Travis" 
-git config --global user.email "Iamtravis@travis.com"
+git config --global user.name "${USERNAME}"
+git config --global user.email "${EMAILADDRESS}"
 git clone --branch=master  https://gunwithg:$GITHUB_API_KEY@github.com/gunwithg/docker-sinatra  master > /dev/null
 
 cd master  
@@ -15,7 +20,7 @@ DOCKER_REPO=$1
 DOCKER_TAG=$2
 
 cat > projectname.hcl << NOMADCONFIG
-job "${NOMAD_JOB}" {
+job "`${NOMAD_JOB}`" {
   region      = "aws"
   datacenters = ["eu-west-1"]
   type = "service"
@@ -91,3 +96,4 @@ echo ${TRAVIS_EVENT_TYPE}
 echo ${TRAVIS_JOB_ID}
 echo ${TRAVIS_PULL_REQUEST}
 echo ${TRAVIS_PULL_REQUEST_BRANCH}
+echo ${TRAVIS_BRANCH}
