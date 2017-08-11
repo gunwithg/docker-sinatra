@@ -14,7 +14,7 @@ touch projectname.hcl
 echo "${TRAVIS_BUILD_NUMBER}" > projectname.hcl
 git add -f .
 git remote rm origin
-git remote add origin https://gunwithg:$GITHUB_API_KEY@github.com/gunwithg/docker-sinatra .git
+git remote add origin https://gunwithg:$GITHUB_API_KEY@github.com/gunwithg/docker-sinatra.git
 cat .git/config
 git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed [skip ci] "
 git push -fq origin master:deploy 
