@@ -20,7 +20,7 @@ DOCKER_REPO=$1
 DOCKER_TAG=$2
 
 cat > projectname.hcl << NOMADCONFIG
-job "`${NOMAD_JOB}`" {
+job "NOMAD_JOB}" {
   region      = "aws"
   datacenters = ["eu-west-1"]
   type = "service"
