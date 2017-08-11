@@ -15,9 +15,9 @@ cat .git/config
 #touch projectname.hcl
 #echo "${TRAVIS_BUILD_NUMBER}" > projectname.hcl
 
-NOMAD_JOB=$(basename `pwd`)
-DOCKER_REPO=$1
-DOCKER_TAG=$2
+#NOMAD_JOB=$(basename `pwd`)
+#DOCKER_REPO=$1
+#DOCKER_TAG=$2
 
 cat > projectname.hcl << NOMADCONFIG
 job "NOMAD_JOB}" {
